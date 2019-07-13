@@ -1,0 +1,177 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2019-07-12T15:15:51Z",
+    "title": "MyStudentCRUD"
+  },
+  "host": "*****************.execute-api.ap-south-1.amazonaws.com",
+  "basePath": "/aws",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/student": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "CreateStudent",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateStudent"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "UpdateStudent",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateStudent"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/students": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    },
+    "/students/count": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UpdateStudent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phnumber": {
+          "type": "string"
+        }
+      }
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    },
+    "CreateStudent": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phnumber": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
